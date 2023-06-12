@@ -11,17 +11,17 @@ export const App = () => {
 
   const handleClick = e => {
     if (e === 'good') {
-      setGood(good + 1);
+      setGood(prewGood => prewGood + 1);
     } else if (e === 'neutral') {
-      setNeutral(neutral + 1);
+      setNeutral(prewNeutral => prewNeutral + 1);
     } else if (e === 'bad') {
-      setBad(bad + 1);
+      setBad(prewBad => prewBad + 1);
     }
   };
 
   const countTotalFeedback = () => {
-    let total = good + neutral + bad;
-    return total;
+    return good + neutral + bad;
+    
   };
 
   const countPositiveFeedbackPercentage = () => {
